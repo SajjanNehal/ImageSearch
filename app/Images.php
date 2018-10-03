@@ -8,7 +8,7 @@ class Images extends Model
 {
     protected $table = 'images';
     protected $fillable = [
-      'name', 'image', 'category', 'sub_category', 'type'
+       'image','name', 'category', 'sub_category', 'type'
     ];
     public function setCategoryAttribute($value){
         $this->attributes['category'] = (string)($value);

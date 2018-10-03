@@ -28,7 +28,7 @@
                                     <div class="form-group">
                                         <label for="name">Please select image:</label>
                                         <input type="file" id="name" name="image" required>
-                                        <span class="help-block">image must be less than size: 5MB</span>
+                                        <span class="help-block">image must be less than size: 2MB</span>
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
@@ -41,19 +41,19 @@
                                 <div class="form-group col-sm-12">
                                     <label for="category">Category:</label>
                                     <select class="form-control" id="category" name="category">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-sm-12">
                                     <label for="sub_category">Sub Category:</label>
                                     <select class="form-control" id="sub_category" name="sub_category">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-sm-12">
@@ -62,6 +62,7 @@
                                         <option value=".png">.png</option>
                                         <option value=".jpg">.jpg</option>
                                         <option value=".gif">.gif</option>
+                                        <option value=".jpeg">.jpeg</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-sm-12 text-center">

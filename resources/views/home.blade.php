@@ -16,7 +16,7 @@
 
                     <div class="row">
                         <div class="col-sm-12">
-                            <img src="{{ asset("images/logo.png") }}" alt="" class="img-responsive center-block">
+                            <img src="{{ asset("img/logo.png") }}" alt="" class="img-responsive center-block">
                         </div>
                     </div>
 

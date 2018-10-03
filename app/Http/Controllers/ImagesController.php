@@ -16,7 +16,10 @@ class ImagesController extends Controller
      */
     public function index()
     {
-        //
+        if(Auth::guest()){return abort(404);}
+        $images = Images::paginate(10);
+        return view('images.index', compact('images'));
+
     }
 
     /**
@@ -38,7 +41,27 @@ class ImagesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'image' => 'required|file|mimes:jpeg,png,jpg,gif|max:2048',
+            'name' => 'required|string',
+            'category' => 'nullable|string',
+            'sub_category' => 'nullable|string',
+            'type' => 'nullable|string',
+        ]);
+        if($file = $request->file('image')){
+            $filename = $request->name.'.' .$file->getClientOriginalExtension();
+            $destinationPath = public_path().'/img/upload/';
+            $file->move($destinationPath,$filename);
+        }
+        Images::create([
+            'image' => $filename,
+            'name' => $request->name,
+            'category' => $request->category,
+            'sub_category' => $request->sub_category,
+            'type' => $request->type,
+        ]);
+        $request->session()->flash('flash_message', 'Image Successfully Uploaded');
+        return redirect('/images/create');
     }
 
     /**
