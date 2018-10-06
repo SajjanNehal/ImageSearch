@@ -105,7 +105,7 @@ class ImagesController extends Controller
     {
         $image = Images::findOrFail($id);
         $this->validate($request,[
-            'image' => 'required|file|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'file|mimes:jpeg,png,jpg,gif|max:2048',
             'name' => 'required|string',
             'category' => 'nullable|string',
             'type' => 'nullable|string',

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46c6cf2a-1ac7-4dba-8612-0e7f29b8ad7f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ImagesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ImagesController.php" />
     </list>
@@ -19,8 +18,8 @@
       <file leaf-file-name="ImagesController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ImagesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="118" column="33" lean-forward="true" selection-start-line="118" selection-start-column="33" selection-end-line="118" selection-end-column="33" />
+            <state relative-caret-position="102">
+              <caret line="107" column="24" lean-forward="false" selection-start-line="107" selection-start-column="24" selection-end-line="107" selection-end-column="24" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
               </folding>
@@ -513,7 +512,7 @@
       <workItem from="1538407771901" duration="10031000" />
       <workItem from="1538571464290" duration="8022000" />
       <workItem from="1538829338102" duration="10668000" />
-      <workItem from="1538840645677" duration="581000" />
+      <workItem from="1538840645677" duration="668000" />
     </task>
     <task id="LOCAL-00001" summary="CRUD working and Search in name, category, type">
       <created>1538839915012</created>
@@ -529,11 +528,18 @@
       <option name="project" value="LOCAL" />
       <updated>1538840904332</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="edit controller filename variable">
+      <created>1538841273426</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1538841273426</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36160000" />
+    <option name="totallyTimeSpent" value="36247000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -571,7 +577,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="CRUD working and Search in name, category, type" />
     <MESSAGE value="Sorry ! not found removed from index page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sorry ! not found removed from index page" />
+    <MESSAGE value="edit controller filename variable" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit controller filename variable" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -944,8 +951,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ImagesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="118" column="33" lean-forward="true" selection-start-line="118" selection-start-column="33" selection-end-line="118" selection-end-column="33" />
+        <state relative-caret-position="102">
+          <caret line="107" column="24" lean-forward="false" selection-start-line="107" selection-start-column="24" selection-end-line="107" selection-end-column="24" />
           <folding>
             <element signature="e#40#68#0#PHP" expanded="true" />
           </folding>
