@@ -18,7 +18,6 @@ class CreateImagesTable extends Migration
            $table->string('image');
            $table->string('name');
            $table->string('category');
-           $table->string('sub_category');
            $table->string('type');
            $table->timestamps();
         });

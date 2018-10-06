@@ -18,22 +18,24 @@
                                 <thead>
                                 <tr class="text-center">
                                     <th>Sr. No</th>
+                                    <th>Image</th>
                                     <th>Name</th>
                                     <th>Category</th>
-                                    <th>Sub Category</th>
                                     <th>Type</th>
                                     <th>Upload Date</th>
                                     <th>Edit</th>
                                     <th>View</th>
+                                    <th>Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @forelse($images as $image)
+                                @if(count($images) > 1)
+                                @foreach($images as $image)
                                     <tr>
                                         <td>{{ $image->id }}</td>
+                                        <td><img src="{{ $image->image == ''? url('img/no-image.png'):url('img/upload/'.$image->image) }}" alt="" class="img-stu center-block"></td>
                                         <td>{{ $image->name }}</td>
                                         <td>{{ $image->category }}</td>
-                                        <td>{{ $image->sub_category }}</td>
                                         <td>{{ $image->type }}</td>
                                         <td>{{ date('h:m:s, d-m-Y', strtotime($image->created_at)) }}</td>
                                         <td>
@@ -46,10 +48,16 @@
                                             <button><span class="fa fa-eye fa-2x"></span></button>
                                             {{ Form::close() }}
                                         </td>
+                                        <td>
+                                            {{ Form::open(array('url' => '/images/'.$image->id, 'method' => 'DELETE')) }}
+                                            <button class="btn btn-danger" onclick="return confirm('Are you sure you want to Delete?')"><span class="fa fa-trash"></span></button>
+                                            {{ Form::close() }}
+                                        </td>
                                     </tr>
-                                @empty
-                                    No list
-                                @endforelse
+                                @endforeach
+                                @else
+                                    <h1 class="text-center">Sorry ! not found</h1>
+                                @endif
                                 </tbody>
                             </table>
                         </div>

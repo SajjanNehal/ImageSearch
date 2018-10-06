@@ -45,19 +45,17 @@ class ImagesController extends Controller
             'image' => 'required|file|mimes:jpeg,png,jpg,gif|max:2048',
             'name' => 'required|string',
             'category' => 'nullable|string',
-            'sub_category' => 'nullable|string',
             'type' => 'nullable|string',
         ]);
         if($file = $request->file('image')){
             $filename = $request->name.'.' .$file->getClientOriginalExtension();
-            $destinationPath = public_path().'/img/upload/';
+            $destinationPath = base_path().'/img/upload/';
             $file->move($destinationPath,$filename);
         }
         Images::create([
             'image' => $filename,
             'name' => $request->name,
             'category' => $request->category,
-            'sub_category' => $request->sub_category,
             'type' => $request->type,
         ]);
         $request->session()->flash('flash_message', 'Image Successfully Uploaded');
@@ -72,7 +70,12 @@ class ImagesController extends Controller
      */
     public function show($id)
     {
-        //
+        if(Auth::guest()){return abort(404);}
+        $image = Images::findOrFail($id);
+        $previous = Images::where('id', '<', $image->id)->max('id');
+        $next = Images::where('id', '>', $image->id)->min('id');
+        return view('images.view', compact('image'))->with('previous', $previous)->with('next', $next);
+
     }
 
     /**
@@ -83,7 +86,12 @@ class ImagesController extends Controller
      */
     public function edit($id)
     {
-        //
+        if(Auth::guest()){return abort(404);}
+        $image = Images::findOrFail($id);
+        $previous = Images::where('id', '<', $image->id)->max('id');
+        $next = Images::where('id', '>', $image->id)->min('id');
+        return view('images.edit', compact('image'))->with('previous', $previous)->with('next', $next);
+
     }
 
     /**
@@ -95,7 +103,27 @@ class ImagesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $image = Images::findOrFail($id);
+        $this->validate($request,[
+            'image' => 'required|file|mimes:jpeg,png,jpg,gif|max:2048',
+            'name' => 'required|string',
+            'category' => 'nullable|string',
+            'type' => 'nullable|string',
+        ]);
+        if($file = $request->file('image')){
+            $filename = $request->name.'.' .$file->getClientOriginalExtension();
+            $destinationPath = base_path().'/img/upload/';
+            $file->move($destinationPath,$filename);
+        }
+        $image->update([
+            'image' => $filename,
+            'name' => $request->name,
+            'category' => $request->category,
+            'type' => $request->type,
+        ]);
+        $request->session()->flash('flash_message', 'Image Successfully Updated');
+        return redirect('/images/'.$id.'/edit');
+
     }
 
     /**
@@ -106,6 +134,12 @@ class ImagesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(Auth::guest()){return redirect('/');}
+        $image = Images::findOrFail($id);
+        $image->destroy($id);
+        Session::flash('flash_message', 'Record Successfully deleted');
+        return redirect('/images/');
+
     }
+
 }
