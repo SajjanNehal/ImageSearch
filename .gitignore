@@ -1,6 +1,7 @@
 # custom 
-.idea
-vendor
+.idea/
+vendor/
+img/upload/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
