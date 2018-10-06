@@ -29,7 +29,6 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @if(count($images) > 1)
                                 @foreach($images as $image)
                                     <tr>
                                         <td>{{ $image->id }}</td>
@@ -55,9 +54,6 @@
                                         </td>
                                     </tr>
                                 @endforeach
-                                @else
-                                    <h1 class="text-center">Sorry ! not found</h1>
-                                @endif
                                 </tbody>
                             </table>
                         </div>
