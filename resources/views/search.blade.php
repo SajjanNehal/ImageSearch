@@ -23,7 +23,7 @@
                             </div>
                         @endif
                             <h3> The Search results for your query <b>' {{ session('query')  }} '</b> are :</h3>
-                            @if(count($results) > 1)
+                            @if(count($results) > 0)
                             @foreach($results as $result)
                                 <div class="col-sm-6">
                                 <div class="media">
